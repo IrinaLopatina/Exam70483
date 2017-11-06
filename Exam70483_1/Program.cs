@@ -10,10 +10,7 @@ namespace Exam70483_1
     {
         static void Main(string[] args)
         {
-            //""
             //
-            //Irina 
-            string dd = "j";
         }
     }
 }
