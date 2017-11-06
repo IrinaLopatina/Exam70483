@@ -10,7 +10,7 @@ namespace Exam70483_1
     {
         static void Main(string[] args)
         {
-            //
+            //Starting to program
         }
     }
 }
