@@ -1,0 +1,7 @@
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\bin\Debug\Exam70483_1.exe.config
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\bin\Debug\Exam70483_1.exe
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\bin\Debug\Exam70483_1.pdb
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\obj\Debug\Exam70483_1.csprojResolveAssemblyReference.cache
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\obj\Debug\Exam70483_1.csproj.CoreCompileInputs.cache
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\obj\Debug\Exam70483_1.exe
+C:\Users\kvileid\source\repos\Exam70483\Exam70483_1\obj\Debug\Exam70483_1.pdb

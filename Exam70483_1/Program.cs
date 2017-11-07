@@ -10,8 +10,22 @@ namespace Exam70483_1
     {
         static void Main(string[] args)
         {
-            //Starting to program
-            //MySEcondBranch 2 
+            var calculator = new Calculator();
+            calculator.Run();
+
+
+            /* Jagger array
+            string[][] friends = new string[3][]{ new string[]{ "A1", "B1", "C1" }, 
+                                                  new string []{ "A2", "B2", "C2", "D2" },
+                                                  new string []{ "A3", "B3", "C3", "D3", "E3" }};
+
+            for (int i = 0; i < friends.Length; i++)
+            {
+                for (int j = 0; j < friends[i].Length; j++)
+                    Console.Write(friends[i][j]);
+                Console.WriteLine();
+            }
+            */
         }
     }
 }
