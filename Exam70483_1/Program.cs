@@ -10,9 +10,13 @@ namespace Exam70483_1
     {
         static void Main(string[] args)
         {
+            var studentReportCardApplication = new StudentReportCardApplication();
+            studentReportCardApplication.Run();
+
+            /* Calculator
             var calculator = new Calculator();
             calculator.Run();
-
+            */
 
             /* Jagger array
             string[][] friends = new string[3][]{ new string[]{ "A1", "B1", "C1" }, 
