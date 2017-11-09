@@ -10,6 +10,8 @@ namespace Exam70483_2
     {
         static void Main(string[] args)
         {
+            var temperatureConverter = new TemperatureConverter();
+            temperatureConverter.Run();
         }
     }
 }
