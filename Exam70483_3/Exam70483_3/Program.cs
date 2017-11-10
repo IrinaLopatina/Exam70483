@@ -10,7 +10,9 @@ namespace Exam70483_3
     {
         static void Main(string[] args)
         {
-            //
+            var transformerApplication = new TransformerApplication();
+            transformerApplication.RunTransformerApplication();
+
         }
     }
 }
