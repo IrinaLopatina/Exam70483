@@ -10,8 +10,18 @@ namespace Exam70483_1
     {
         static void Main(string[] args)
         {
+            
             var studentReportCardApplication = new StudentReportCardApplication();
             studentReportCardApplication.Run();
+            
+            /* Explicit interface implementation
+            var explInt = new ExplicitInterfaceImplementation();
+
+            ((IConflictOne)explInt).PrintMyString("String 1");
+            ((IConflictTwo)explInt).PrintMyString("String 2");
+            explInt.PrintMyString("String 3");
+            */
+            
 
             /* Calculator
             var calculator = new Calculator();
