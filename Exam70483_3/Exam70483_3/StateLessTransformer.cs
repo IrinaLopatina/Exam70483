@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exam70483_3
 {
-    class TransformerApplication
-    {
+    public class StateLessTransformer
+    { 
         public enum Landscape
         {
             Air,
@@ -15,22 +15,22 @@ namespace Exam70483_3
             Water
         }
 
-        public interface ITransformer
+        public interface IVehicle
         {
             int Wheels { get; }
             double MaxSpeed { get; }
-            ITransformer Run(Landscape newLandscape);
+            IVehicle Run(Landscape newLandscape);
         }
 
-        public abstract class Transformer : ITransformer
+        public abstract class Vehicle : IVehicle
         {
             public int Wheels { get; protected set; }
             public double MaxSpeed { get; protected set; }
 
-            public abstract ITransformer Run(Landscape newLandscape);
+            public abstract IVehicle Run(Landscape newLandscape);
         }
 
-        public class Jet : Transformer
+        public class Jet : Vehicle
         {
             public Jet()
             {
@@ -38,7 +38,7 @@ namespace Exam70483_3
                 MaxSpeed = 900;
             }
 
-            public override ITransformer Run(Landscape newLandscape)
+            public override IVehicle Run(Landscape newLandscape)
             {
                 switch (newLandscape)
                 {
@@ -52,14 +52,14 @@ namespace Exam70483_3
             }
         }
 
-        public class Car : Transformer
+        public class Car : Vehicle
         {
             public Car()
             {
                 Wheels = 4;
                 MaxSpeed = 350;
             }
-            public override ITransformer Run(Landscape newLandscape)
+            public override IVehicle Run(Landscape newLandscape)
             {
                 switch (newLandscape)
                 {
@@ -73,14 +73,14 @@ namespace Exam70483_3
             }
         }
 
-        public class Boat : Transformer
+        public class Boat : Vehicle
         {
             public Boat()
             {
                 Wheels = 0;
                 MaxSpeed = 200;
             }
-            public override ITransformer Run(Landscape newLandscape)
+            public override IVehicle Run(Landscape newLandscape)
             {
                 switch (newLandscape)
                 {
@@ -94,21 +94,19 @@ namespace Exam70483_3
             }
         }
 
-        public void RunTransformerApplication()
+        public void Run()
         {
-            ITransformer transformer = new Jet();
-            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", transformer.Wheels, transformer.MaxSpeed));
+            IVehicle vehicle = new Jet();
+            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", vehicle.Wheels, vehicle.MaxSpeed));
 
-            transformer = transformer.Run(Landscape.Road);
-            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", transformer.Wheels, transformer.MaxSpeed));
+            vehicle = vehicle.Run(Landscape.Road);
+            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", vehicle.Wheels, vehicle.MaxSpeed));
 
-            transformer = transformer.Run(Landscape.Road);
-            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", transformer.Wheels, transformer.MaxSpeed));
+            vehicle = vehicle.Run(Landscape.Road);
+            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", vehicle.Wheels, vehicle.MaxSpeed));
 
-            transformer = transformer.Run(Landscape.Water);
-            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", transformer.Wheels, transformer.MaxSpeed));
-
-
+            vehicle = vehicle.Run(Landscape.Water);
+            Console.WriteLine(String.Format("My values: wheels = {0}, max speed = {1}", vehicle.Wheels, vehicle.MaxSpeed));
         }
     }
 }

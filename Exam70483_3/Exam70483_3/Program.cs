@@ -10,9 +10,14 @@ namespace Exam70483_3
     {
         static void Main(string[] args)
         {
-            var transformerApplication = new TransformerApplication();
-            transformerApplication.RunTransformerApplication();
-
+            
+            var transformer = new StateLessTransformer();
+            transformer.Run();
+            
+            /*
+            var transformer = new StateFullTransformer();
+            transformer.Run();
+            */
         }
     }
 }
