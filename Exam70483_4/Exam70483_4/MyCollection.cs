@@ -7,10 +7,69 @@ using System.Threading.Tasks;
 
 namespace Exam70483_4
 {
-    class MyCollection<T> : IEnumerable<T>, ICollection<T>  where T: IThreeDimensional, IEquatable<T> //,IList<T> 
+    class MyCollection<T> : IEnumerable<T>, ICollection<T>, IList<T> where T: IThreeDimensional, IEquatable<T>
     { 
         // The inner collection to store objects.
         List<T> innerCol = new List<T>();
+
+        #region IList
+
+        //Gets or sets the element at the specified index
+        public T this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= innerCol.Count)
+                    throw new IndexOutOfRangeException("Invalid index!!");
+                return innerCol[index];
+            }
+            set
+            {
+                if (!Contains(value))
+                {
+                    innerCol[index] = value;
+                }
+            }
+        }
+
+        //Determines the index of a spesific item
+        public int IndexOf(T item)
+        {
+            var index = -1;
+            for (var i = 0; i < innerCol.Count; i++)
+            {
+                if (innerCol[i].Equals(item))
+                {
+                    index = i;
+                    break;
+                }
+            }
+            return index;
+        }
+
+        //Inserts an item at the specified index
+        public void Insert(int index, T item)
+        {
+            if (index < 0 || index >= innerCol.Count)
+                throw new IndexOutOfRangeException("Invalid index!!");
+
+            if (!Contains(item))
+            {
+                innerCol.Insert(index, item);
+            }
+        }
+
+        //Remove the item at the specified index
+        public void RemoveAt(int index)
+        {
+            if (index < 0 || index >= innerCol.Count)
+                throw new IndexOutOfRangeException("Invalid index!!");
+
+            innerCol.RemoveAt(index);
+        }
+
+
+        #endregion IList
 
         #region ICollection<T> members
 
