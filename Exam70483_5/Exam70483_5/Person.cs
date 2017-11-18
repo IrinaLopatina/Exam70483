@@ -58,7 +58,7 @@ namespace Exam70483_5
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
-
+    /*
     class Program
     {
         static void Main(string[] args)
@@ -93,4 +93,5 @@ namespace Exam70483_5
             }
         }
     }
+    */
 }
