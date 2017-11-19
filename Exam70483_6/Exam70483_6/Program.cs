@@ -30,6 +30,9 @@ namespace Exam70483_6
 
             countryHelper.UpdateCountry(20, "Germany", "Bonn", 76, 40000000, "german");
             countryHelper.Print();
+
+            countryHelper.RemoveCountries("english");
+            countryHelper.Print();
         }
     }
 }

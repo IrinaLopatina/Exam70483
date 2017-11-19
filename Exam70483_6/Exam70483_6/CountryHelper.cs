@@ -50,7 +50,9 @@ namespace Exam70483_6
         {
             //var country = countries.Where(c => c.Name == name).FirstOrDefault();
 
-            var country = (from c in countries where c.Name == name select c).FirstOrDefault();
+            var country = (from c in countries
+                           where c.Name == name
+                           select c).FirstOrDefault();
             return country;
         }
 
@@ -58,7 +60,9 @@ namespace Exam70483_6
         {
             //var country = countries.Where(c => c.Code == code).FirstOrDefault();
 
-            var country = (from c in countries where c.Code == code select c).FirstOrDefault();
+            var country = (from c in countries
+                           where c.Code == code
+                           select c).FirstOrDefault();
             return country;
         }
 
@@ -79,6 +83,11 @@ namespace Exam70483_6
                 country.Population = population;
                 country.Language = language;
             }
+        }
+
+        internal void RemoveCountries(string language)
+        {
+            countries.RemoveAll(c => c.Language == language);
         }
     }
 }
