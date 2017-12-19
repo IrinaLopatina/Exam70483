@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace Exam70483_8
 {
@@ -13,24 +14,23 @@ namespace Exam70483_8
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            await DoTimeConsumingTaskAsync();
+            string html = await GetHTML(uriTxtb.Text);
+            htmlLbl.Text = html;
         }
 
-        private Task DoTimeConsumingTaskAsync()
+        /// <summary>
+        /// Asyncronously gets the html from url
+        /// </summary>
+        /// <param name="url">url whose html needs to be extracted</param>
+        /// <returns>returns html code of url</returns>
+        private async Task<string> GetHTML(string url = "https://www.google.com")
         {
-            Task task = Task.Run(() =>
+            string htmlcode;
+            using (WebClient client = new WebClient())
             {
-                using (var htmlReader = new HTML_Reader())
-                {
-
-                    var html = htmlReader.GetHtml();
-                    //label1.Text = textBox1.Text;//html;
-                    //label1.Text = html.Substring(0, 20);
-                    textBox2.Text = html;//.Substring(0, 200);
-                }
-            });
-
-            return task;
+                htmlcode = await client.DownloadStringTaskAsync(url);
+            }
+            return htmlcode;
         }
     }
 }

@@ -28,62 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.uriTxtb = new System.Windows.Forms.TextBox();
+            this.htmlLbl = new System.Windows.Forms.Label();
+            this.downloadBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // uriTxtb
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Please, enter URL to load...";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.uriTxtb.Location = new System.Drawing.Point(37, 40);
+            this.uriTxtb.Name = "uriTxtb";
+            this.uriTxtb.Size = new System.Drawing.Size(219, 20);
+            this.uriTxtb.TabIndex = 0;
+            this.uriTxtb.Text = "https://www.google.com";
             // 
-            // label1
+            // htmlLbl
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.htmlLbl.AutoEllipsis = true;
+            this.htmlLbl.AutoSize = true;
+            this.htmlLbl.Location = new System.Drawing.Point(46, 143);
+            this.htmlLbl.Name = "htmlLbl";
+            this.htmlLbl.Size = new System.Drawing.Size(64, 13);
+            this.htmlLbl.TabIndex = 1;
+            this.htmlLbl.Text = "Displaying...";
             // 
-            // button1
+            // downloadBtn
             // 
-            this.button1.Location = new System.Drawing.Point(89, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Load";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.AcceptsReturn = true;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(78, 220);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.downloadBtn.AutoSize = true;
+            this.downloadBtn.Location = new System.Drawing.Point(95, 92);
+            this.downloadBtn.Name = "downloadBtn";
+            this.downloadBtn.Size = new System.Drawing.Size(98, 23);
+            this.downloadBtn.TabIndex = 2;
+            this.downloadBtn.Text = "Download HTML";
+            this.downloadBtn.UseVisualStyleBackColor = true;
+            this.downloadBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.downloadBtn);
+            this.Controls.Add(this.htmlLbl);
+            this.Controls.Add(this.uriTxtb);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -93,10 +80,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox uriTxtb;
+        private System.Windows.Forms.Label htmlLbl;
+        private System.Windows.Forms.Button downloadBtn;
     }
 }
 
