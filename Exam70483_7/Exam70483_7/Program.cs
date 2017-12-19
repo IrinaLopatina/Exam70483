@@ -6,7 +6,7 @@ namespace Exam70483_7
     {
         static void Main(string[] args)
         {
-            using (WebRequester req = new WebRequester())
+            using (HTML_Reader req = new HTML_Reader())
             {
             }
             Console.WriteLine("The end");

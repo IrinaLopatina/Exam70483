@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Exam70483_7
 {
-    class WebRequester : IDisposable
+    class HTML_Reader : IDisposable
     {
         const string uri = "http://www.google.com";
 
@@ -13,7 +13,7 @@ namespace Exam70483_7
         Stream dataStream;
         StreamReader reader;
 
-        public WebRequester()
+        public HTML_Reader()
         {
             // Create a request for the URL. 		
             WebRequest request = WebRequest.Create(uri);
@@ -40,7 +40,7 @@ namespace Exam70483_7
             GC.SuppressFinalize(this);
         }
 
-        ~WebRequester()
+        ~HTML_Reader()
         {
             Dispose(false);
         }
