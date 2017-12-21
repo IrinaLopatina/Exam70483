@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
@@ -18,6 +19,7 @@ namespace Exam70483_8
             htmlLbl.Text = html;
         }
 
+    
         /// <summary>
         /// Asyncronously gets the html from url
         /// </summary>
