@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
+
 
 namespace Exam70483_11
 {
-    class Catalog
+    [Serializable]
+    [XmlRoot("catalog")]
+    public class Catalog
     {
-        public List<Book> bookList;
+        [XmlElement(ElementName = "book")]
+        public List<Book> Books { get; set; }
     }
 }
