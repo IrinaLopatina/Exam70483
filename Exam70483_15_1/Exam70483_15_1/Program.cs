@@ -39,13 +39,14 @@ namespace Exam70483_15_1
 
             try
             {
-                trace.TraceInformation("Tracing start to Event Log");
+                trace.TraceEvent(TraceEventType.Start, 0, "Tracing start to Event Log");
                 int num1 = 10;
                 int num2 = 0;
 
                 if (num1.GetType() == typeof(int) && num2.GetType() == typeof(int))
                 {
-                    trace.TraceInformation("Numbers are valid");
+                    trace.TraceEvent(TraceEventType.Information, 1, "Numbers are valid");
+                    //trace.TraceInformation("Numbers are valid");
                 }
 
                 //if (num2 < 1)
@@ -59,10 +60,11 @@ namespace Exam70483_15_1
             }
             catch (Exception ex)
             {
-                trace.TraceEvent(TraceEventType.Error, 0, "Exception due to division by 0");
+                trace.TraceEvent(TraceEventType.Critical, 2, ex.Message);
             }
             finally
             {
+                trace.TraceEvent(TraceEventType.Stop, 3, "Tracing stop to Event Log");
                 trace.Flush();
                 trace.Close();
             }
